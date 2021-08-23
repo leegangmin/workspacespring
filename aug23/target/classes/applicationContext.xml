@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+	
+	<!--
+	p:변수명="값"
+	p:변수명-ref="객체"
+	-->
+	
+	
+	<bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="apple" p:price="150000">
+	</bean>
+	
+	<bean id="human" class="polymorphism.Human">
+		<property name="age" value="150"/>
+		<property name="name" value="홍길동"/>
+	</bean>
+
+</beans>
