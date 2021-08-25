@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="java.lang.Integer" alias="integer"/>
+		<!-- 내가 만든 클래스를 mybatis가 사용할 수 있도록 등록해주기 -->
+	</typeAliases>
+</configuration>

@@ -5,10 +5,36 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-08-23T05:02:00Z</updated>
+  <updated>2021-08-24T07:00:00Z</updated>
   <entry>
-    <title>Structuring Spring Boot Applications</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/08/22/structuring-spring-boot-applications" />
+    <title>This Week in Spring - August 24th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/08/24/this-week-in-spring-august-24th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-08-24:4526</id>
+    <updated>2021-08-24T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans, and welcome to another riveting roundup of all the news that&amp;rsquo;s fit to reprint in the Java and Spring ecosystems, with apologies, as always, to &lt;em&gt;The Times&lt;/em&gt;. We&amp;rsquo;re a week away from &lt;a href="https://springone.io"&gt;SpringOne 2021&lt;/a&gt;, our annual, free, and utterly online tentpole conference featuring hundreds of hours of amazing technical content from speakers all around the world and tens of thousands of attendees with whom to partake in the festivities. Do &lt;em&gt;not&lt;/em&gt; miss this! I&amp;rsquo;ll be there! &lt;/p&gt;
+&lt;p&gt;I get so excited in the leadup to SpringOne each year, and this year doubly so! First, there&amp;rsquo;s the usual monumental scope of the whole thing, which always gets me. &lt;a href="https://twitter.com/starbuxman/status/1429554959675125763"&gt;I also just got my first (of hopefully many) negative COVID-19 tests&lt;/a&gt; a few days ago, after three weeks of convalescence. Huzzah! I&amp;rsquo;m still taking it easy, trying to make sure I stay on the good side of the hospital doors, and that I don&amp;rsquo;t relapse or incur any of the possible repercussions of COVID post-recovery. All that to say that SpringOne, this year, a year in which we - a worldwide community - have been through hell and back and &lt;em&gt;still&lt;/em&gt; shipped paradigm-shifting, game-changing software, and a year in which I fought COVID-19, is going to be extra special for me. I got so excited I started &lt;a href="https://twitter.com/starbuxman/status/1430309519062573057?s=21"&gt;tweeting poetry &lt;/a&gt; :-) &lt;/p&gt;
+&lt;p&gt;Anyway, enough about this and that, let&amp;rsquo;s get to the roundup! There&amp;rsquo;s a ton of good stuff my friends! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/19/spring-authorization-server-goes-to-production"&gt;Spring Authorization Server goes to production!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/19/a-bootiful-podcast-microsoft-azure-engineering-manager-rome-li-on-his-work-supporting-microsoft-azure-in-intellij-visual-studio-maven-eclipse-and-visual-studio-code"&gt;A Bootiful Podcast: Microsoft Azure engineering manager Rome Li on his work supporting Microsoft Azure in IntelliJ, Visual Studio, Maven, Eclipse, and Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/developer/tv/bcak/39/"&gt;I love this episode of Nate Schutta&amp;rsquo;s podcast, &amp;ldquo;Between Chair and Keyboard&amp;rdquo;&lt;/a&gt; with Ryan Baxter&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/19/spring-boot-2-4-10-is-now-available"&gt;Spring Boot 2.4.10 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/19/spring-boot-2-5-4-available-now"&gt;Spring Boot 2.5.4 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/19/spring-boot-2-6-0-m2-is-now-available"&gt;Spring Boot 2.6.0-M2 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://m.youtube.com/watch?v=uFPbUqrbanc&amp;feature=youtu.be"&gt;Spring Cloud Config for Shared Microservice Configuration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/18/spring-tools-4-11-1-released"&gt;Spring Tools 4.11.1 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/08/22/structuring-your-code-for-spring-framework-and-spring-boot"&gt;Structuring Your Code for Spring Framework and Spring Boot&lt;/a&gt; - I wrote a blog on how to think about the wiring of your objects in a typical Spring Boot application. I speak more about how the wiring works from an IoC perspective, not in terms of a particular paradigm or Spring module. The blog is meant to be a response to a question I received on Twitter that precipitated some writing. I hope you enjoy it!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1430184278122397700"&gt;Microsoft and VMware would love to see you at SpringOne in September! Join us for big Spring on Azure announcements and attend keynotes, sessions, and a hands-on workshop. &lt;/a&gt;. Did I mention that I&amp;rsquo;ll be doing a breakout introducing all the new goodness in Azure Spring Cloud with my friends Julien Dubois and Layla Porter? Don&amp;rsquo;t miss this!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Structuring Your Code for Spring Framework and Spring Boot</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/08/22/structuring-your-code-for-spring-framework-and-spring-boot" />
     <category term="engineering" label="Engineering" />
     <author>
       <name>Josh Long</name>
@@ -16,6 +42,7 @@
     <id>tag:spring.io,2021-08-22:4525</id>
     <updated>2021-08-23T05:02:00Z</updated>
     <content type="html">&lt;h2&gt;&lt;a href="#or-how-to-build-a-mental-framework-for-spring-framework" class="anchor" name="or-how-to-build-a-mental-framework-for-spring-framework"&gt;&lt;/a&gt;or: How To Build a Mental Framework for Spring Framework&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;EDIT&lt;/strong&gt;: There&amp;rsquo;s a great comment below that mentions that the original title, &lt;em&gt;Structuring Spring Boot Applications&lt;/em&gt;, is a bit misleading, in that the blog doesn&amp;rsquo;t intend to talk about how to organize types and packages, and instead thinks about how Spring interacts with the objects in your code. The next paragraph sought to clarify that point but apparently fell short. Anyway, I&amp;rsquo;ve changed it, which unfortunately will break earlier links to it. I&amp;rsquo;m sorry for both the poor title and the now two days of broken links. I hope it&amp;rsquo;s useful for everyone, even if I clearly could&amp;rsquo;ve done a better job with the title&amp;hellip; &lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s hard to think about structuring applications. There&amp;rsquo;s a lot to think about at the higher level - is it a batch job, a web application, a messaging application, etc. The frameworks - Spring Batch, Spring Webflux, Spring Integration, respectively - will guide those decisions. There are many other frameworks besides, and they are tailored made to help you build something worthy of production for a particular business vertical. We won&amp;rsquo;t explore those in this post. Instead, I want to answer the question: &lt;em&gt;how do we structure our configuration&lt;/em&gt;? &lt;/p&gt;
 &lt;p&gt;I can&amp;rsquo;t give you an opinionated answer and hope to fit it in one post, but we can discuss the technical dimensions of configuration in a Spring Boot application in 2021. It is easier to talk about how to structure your Java objects to work well in an inversion of control (IoC) container. Remember, at the end of the day, Spring is a big bag of objects. It needs to know how you want to arrange your objects - how they wire up and how they relate to each other - to provide services to them. For example, it can begin and commit transactions when a method starts and stops. It can create HTTP endpoints that invoke your Spring controller handler methods when a request arrives. It can invoke your message listener objects in response to new messages coming from an Apache Kafka broker or AWS SQS or RabbitMQ or whatever. The list of things Spring can do goes on and on, but it all assumes that you&amp;rsquo;ve registered the objects with Spring, first. &lt;/p&gt;
 &lt;p&gt;Spring has a metamodel of your objects - it&amp;rsquo;s sort of like the Java reflection API. It knows which classes have annotations. It knows which objects have constructors. It knows on which dependencies, which beans and which type, a given object depends. Your job is to help it build up this metamodel to manage all your objects for you. For example, if it can control the creation of your objects, then it can also change the creation of your objects before they get created. &lt;/p&gt;
@@ -681,20 +708,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
   &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1417894074833543174"&gt;Spring Cloud scales Spring Boot apps to billions of requests per day without the hassle of managing infrastructure. See it in action and hear how Swiss Re is acceleratin&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1419674308390031362"&gt;Register for @SpringOne today&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Premiering Now: SpringOne Tour - July 2021: Do or Do Not, There is no try{} in Production</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/07/23/premiering-now-springone-tour-july-2021-do-or-do-not-there-is-no-try-in-production" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-07-23:4506</id>
-    <updated>2021-07-23T12:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this July 2021 installment of SpringOne Tour, Josh Long, Cora Iberkleid, Angie Jones, Madhura Bhave, Bella Bai, Olga Maciaszek-Sharma, Whitney Lee, and Nate Schutta look at the wide and wonderful world of testing, continuous integration, and continuous delivery. &lt;/p&gt;
-&lt;p&gt;This event - a mini-conference if you will - is two hours and some change long and features dedicated segments from the industry&amp;rsquo;s best, so grab a drink, a note pad, and let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/pQwMws6we6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
