@@ -2,9 +2,45 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="test">
-  <select id="boardList" resultType="String" parameterType="integer">
-    select name from tableName where bno = #{no}
-  </select>
+
+	<select id="boardList" parameterType="hashMap" resultType="testDTO">
+		SELECT * FROM sbboardview WHERE sb_cate=#{sb_cate} LIMIT #{startPage}, #{lastPage}            
+	</select>
+	
+	<select id="totalList" resultType="Integer">
+		SELECT COUNT(*) FROM sbboardview WHERE sb_cate=#{sb_cate} LIMIT 1
+	</select>
+	
+	
+	
+	<select id="getCategory" resultType="String">
+		SELECT sc_category FROM scategory WHERE sc_no=#{sc_cate}
+	</select>
+
+	<insert id="write" parameterType="testDTO">
+		INSERT INTO sboard (sb_title, sb_content, sm_no, sb_cate) 
+		VALUES (#{sb_title}, #{sb_content},
+		 	(SELECT sm_no FROM smember WHERE sm_id=#{sm_id}), #{sb_cate}
+		 )	
+	</insert>
+	
+	<select id="detail" parameterType="integer" resultType="testDTO">
+		SELECT * FROM sbboardview WHERE sb_no=#{sb_no }
+	</select>
+		
+	<update id="delete">
+		UPDATE sboard SET sb_del=1 WHERE sb_no=#{sb_no }
+	</update>
+	
+	
+	<update id="update" parameterType="testDTO">
+		UPDATE sboard SET sb_title=#{sb_title }, sb_content=#{sb_content } 
+		WHERE sb_no=#{sb_no }
+	</update>
+	
+	<select id="categoryList" resultType="hashMap">
+		SELECT sc_no, sc_category, sc_date FROM scategory
+	</select>
+
 </mapper>
