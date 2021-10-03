@@ -5,7 +5,8 @@ package com.poseidon.web;
  * sb_del은 삭제 유무이기때문에 삭제된 것은 여기 안 나오게 하겠습니다.
  */
 public class TestDTO {
-	private int sb_no, sm_no, sb_count, sb_cate;
+	private int sb_nno, sb_like, sb_no, sm_no, sb_count, sb_cate;
+	private String sb_orifile;
 	private String sb_title, sb_content, sb_date, 
 					sb_file, sm_id, sm_name, sc_category;
 	public int getSb_no() {
@@ -73,6 +74,24 @@ public class TestDTO {
 	}
 	public void setSc_category(String sc_category) {
 		this.sc_category = sc_category;
+	}
+	public int getSb_nno() {
+		return sb_nno;
+	}
+	public void setSb_nno(int sb_nno) {
+		this.sb_nno = sb_nno;
+	}
+	public int getSb_like() {
+		return sb_like;
+	}
+	public void setSb_like(int sb_like) {
+		this.sb_like = sb_like;
+	}
+	public String getSb_orifile() {
+		return sb_orifile;
+	}
+	public void setSb_orifile(String sb_orifile) {
+		this.sb_orifile = sb_orifile;
 	}
 
 	

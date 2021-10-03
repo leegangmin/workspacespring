@@ -50,6 +50,10 @@ function userDelete(no){
 </script>
 </head>
 <body>
+	<a href="./category">카테고리</a>
+	<a href="./member">사용자목록</a>
+	<a href="./logList">사용기록</a>
+	<a href="./logStatistics">통계</a>
 	<h1>전체 사용자 리스트</h1>
 	<div id="list">
 	

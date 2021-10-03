@@ -8,6 +8,7 @@
 		<typeAlias type="com.poseidon.web.TestDTO" alias="testDTO"/>
 		<typeAlias type="com.poseidon.web.login.LoginDTO" alias="loginDTO"/>
 		<typeAlias type="com.poseidon.web.admin.MemberDTO" alias="memberDTO"/>
+		<typeAlias type="com.poseidon.web.log.LogDTO" alias="logDTO"/>
 	</typeAliases>
 
 </configuration>

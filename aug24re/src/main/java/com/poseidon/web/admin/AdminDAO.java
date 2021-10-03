@@ -39,6 +39,10 @@ public class AdminDAO {
 	public int userDelete(int sm_no) {
 		return sqlSession.update("admin.userDelete", sm_no);
 	}
+
+	public int categoryVisible(int sc_no) {
+		return sqlSession.update("admin.categoryVisible", sc_no);
+	}
 	
 	
 }

@@ -38,4 +38,8 @@ public class AdminService {
 	public int userDelete(int sm_no) {
 		return adminDAO.userDelete(sm_no);
 	}
+
+	public int categoryVisible(int sc_no) {
+		return adminDAO.categoryVisible(sc_no);
+	}
 }

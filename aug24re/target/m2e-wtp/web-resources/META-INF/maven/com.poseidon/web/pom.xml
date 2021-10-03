@@ -40,13 +40,13 @@
 	</repositories>
 
 	<dependencies>
+
 		<!-- 전자정부 페이징 -->
 		<dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.ptl.mvc</artifactId>
 			<version>3.8.0</version>
 		</dependency>
-		
 
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<!-- 파일 업로드용 -->

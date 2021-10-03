@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="message">
+	
+	<select id="messageList" parameterType="HashMap" resultType="HashMap">
+		SELECT me_no, me_sendp, sm_name, sm_id, me_readp, 
+				me_date, me_read 
+		FROM smessageview 
+		WHERE me_readp=(SELECT sm_no FROM smember WHERE sm_id=#{sm_id})
+	</select>
+	
+	<select id="detail" parameterType="HashMap" resultType="HashMap">
+		SELECT me_no, me_sendp, sm_name, sm_id, 
+				me_readp, me_date, me_content, me_read   
+		FROM smessageview 
+		WHERE me_no=#{openmsg} AND 
+		me_readp=(SELECT sm_no FROM smember WHERE sm_id=#{sm_id})
+	</select>
+	
+	<update id="readMessage" parameterType="HashMap">
+		UPDATE smessage SET me_read=1 WHERE me_no=#{openmsg}
+		AND me_readp=(SELECT sm_no FROM smember WHERE sm_id=#{sm_id})
+	</update>
+	
+	<select id="getName" parameterType="HashMap" resultType="String">
+		SELECT sm_id FROM smember WHERE sm_no=#{sendmsg }
+	</select>
+
+	<insert id="sendMessage" parameterType="HashMap">
+      INSERT INTO smessage(me_sendp, me_readp, me_content) VALUES 
+      (
+       (SELECT sm_no FROM smember WHERE sm_id=#{sm_id}),
+       (SELECT sm_no FROM smember WHERE sm_id=#{sendID}),
+        #{content}
+       )
+   </insert>
+	
+	<delete id="delMsg" parameterType="HashMap">
+		DELETE FROM smessage WHERE me_no=#{no} AND
+		me_readp=(SELECT sm_no FROM smember WHERE sm_id=#{sm_id})
+	</delete>
+	
+	
+	
+	
+</mapper>

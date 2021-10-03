@@ -21,7 +21,7 @@ th {
 }
 
 tr {
-	border: 1px gray solid;
+	border-bottom: 1px gray solid;
 }
 td{
 	text-align: center;
@@ -30,6 +30,7 @@ td{
 text-align: left;
 }
 #paging{text-align:center;margin:10px auto;}
+#paging img{vertical-align: middle;}
 #paging a{display:inline-block; padding:0 3px;}
 #paging a:hover{background-color:#EAFAF1;border-color:#eee;box-shadow:3px 3px 3px #7DCEA0;}
 
@@ -61,7 +62,7 @@ function linkPage(pageNo){
 				</tr>
 				<c:forEach items="${list }" var="l">
 					<tr>
-						<td>${l.sb_no }</td>
+						<td>${l.sb_nno }</td>
 						<td id="title"><a href="./detail?sb_no=${l.sb_no }">${l.sb_title }</a></td>
 						<td>${l.sb_date }</td>
 						<td>${l.sb_count }</td>
@@ -71,7 +72,7 @@ function linkPage(pageNo){
 			</table>
 			<!-- 페이징은 여기에 -->
 			<div id="paging">
-				<ui:pagination paginationInfo="${paginationInfo}" type="text" jsFunction="linkPage"/>
+				<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="linkPage"/>
 			</div>
 		</c:when>
 		<c:otherwise>
@@ -88,30 +89,3 @@ function linkPage(pageNo){
 
 </body>
 </html>
-
-
-<!-- 
-java 11.0.12
-tomcat 9.0.52
-spring 3       spring-tool-suite-3.9.17.RELEASE
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

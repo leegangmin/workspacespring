@@ -3,6 +3,7 @@ package com.poseidon.web;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,14 +16,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.poseidon.util.Util;
 import com.poseidon.web.admin.AdminService;
 import com.poseidon.web.admin.MemberDTO;
+import com.poseidon.web.log.LogDTO;
+import com.poseidon.web.log.LogService;
+
+import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private LogService logService;
+	@Autowired
+	private Util util;
 
 	// @RequestMapping(value = {"/category", "/admin"})
 	// http://localhost:8080/web/admin/category
@@ -124,4 +134,58 @@ public class AdminController {
 		return "redirect:/admin/member";
 	}
 	
+	@GetMapping("/categoryVisible")
+	public String categoryVisible(@RequestParam("sc_no") int sc_no) {
+		//로직
+		int result = adminService.categoryVisible(sc_no);
+		return "redirect:/admin/category";
+	}
+	
+	@GetMapping("/logList")
+	public ModelAndView logList(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("admin/logList");
+		
+		System.out.println("searchName : " + request.getParameter("searchName"));
+		System.out.println("search : " + request.getParameter("search"));
+		String searchName = request.getParameter("searchName");
+		String search = request.getParameter("search");
+		
+		PaginationInfo paginationInfo = new PaginationInfo();
+		int pageNo = 1;
+		int listScale = 10;
+		int pageScale = 10;
+		
+		if (request.getParameter("pageNo") != null) {
+			pageNo = util.str2Int2(request.getParameter("pageNo"));
+		}
+		
+		paginationInfo.setCurrentPageNo(pageNo);
+		paginationInfo.setRecordCountPerPage(listScale);
+		paginationInfo.setPageSize(pageScale);
+
+		int startPage = paginationInfo.getFirstRecordIndex();
+		int lastPage = paginationInfo.getRecordCountPerPage();
+
+		Map<String, Object> sendMap = new HashMap<String, Object>();
+		sendMap.put("startPage", startPage);
+		sendMap.put("lastPage", lastPage);
+		//검색 값 map에 붙이기
+		//검색이 있다면 뒤쪽까지 데이터를 전달해주세요.
+		if(searchName != null){			
+			sendMap.put("searchName", searchName);
+			sendMap.put("search", search);
+			mv.addObject("searchName", searchName);
+			mv.addObject("search", search);
+		}
+		
+
+		List<LogDTO> list = logService.logList(sendMap);
+		int totalCount = logService.logTotalList(sendMap);//파라미터 변경
+		paginationInfo.setTotalRecordCount(totalCount);
+		mv.addObject("paginationInfo", paginationInfo);
+		mv.addObject("pageNo", pageNo);
+		mv.addObject("totalCount", totalCount);
+		mv.addObject("list", list);	
+		return mv;
+	}	
 }

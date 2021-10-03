@@ -37,8 +37,8 @@ public class TestDAO {
 		return sqlSession.selectOne("test.detail", bno);
 	}
 
-	public int delete(int sb_no) {
-		return sqlSession.delete("test.delete", sb_no);
+	public int delete(TestDTO dto) {
+		return sqlSession.delete("test.delete", dto);
 	}
 
 	public int update(TestDTO dto) {
@@ -55,6 +55,18 @@ public class TestDAO {
 
 	public int totalList(int sb_cate) {
 		return sqlSession.selectOne("test.totalList", sb_cate);
+	}
+
+	public void viewCount(int sb_no) {
+		sqlSession.update("test.viewCount", sb_no);
+	}
+
+	public void like(Map<String, Object> sendMap) {
+		sqlSession.insert("test.like", sendMap);		
+	}
+
+	public int likeCheck(Map<String, Object> sendMap) {
+		return sqlSession.selectOne("test.likeCheck", sendMap);
 	}
 
 }

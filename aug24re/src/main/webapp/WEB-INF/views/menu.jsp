@@ -19,4 +19,7 @@
 				<c:forEach items="${categoryList }" var="cl">
 					<a href="./board?sb_cate=${cl.sc_no }">${cl.sc_category }</a> |
 				</c:forEach>
+				<a href="./admin/category">category</a> |
+				<a href="./admin/member">member</a> |
+				<a href="./admin/logList">logList</a> |
 			</div>

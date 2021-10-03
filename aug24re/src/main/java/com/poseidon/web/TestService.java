@@ -28,8 +28,8 @@ public class TestService {
 		return testDAO.detail(bno);
 	}
 
-	public int delete(int bno) {
-		return testDAO.delete(bno);
+	public int delete(TestDTO dto) {
+		return testDAO.delete(dto);
 	}
 
 	public int update(TestDTO dto) {
@@ -46,5 +46,17 @@ public class TestService {
 
 	public int totalList(int sb_cate) {
 		return testDAO.totalList(sb_cate);
+	}
+
+	public void viewCount(int sb_no) {
+		testDAO.viewCount(sb_no);
+	}
+
+	public void like(Map<String, Object> sendMap) {
+		int result = testDAO.likeCheck(sendMap);
+		System.out.println("result : " + result);
+		if(result == 0) {
+			testDAO.like(sendMap);
+		}
 	}
 }

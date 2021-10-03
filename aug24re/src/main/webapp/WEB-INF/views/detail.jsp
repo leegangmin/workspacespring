@@ -16,6 +16,13 @@
 	padding: 5px;
 }
 </style>
+<script type="text/javascript">
+function like(no){
+	//alert(no+"좋아요를 눌렀습니다.");
+	location.href="./like?sb_no="+no;
+	
+}
+</script>
 </head>
 <body>
 	<div id="container">
@@ -36,8 +43,15 @@
 				<hr>
 				<br>${dto.sm_name }(<small>${dto.sm_id }</small>)
 				<br>날짜 : ${dto.sb_date } | 조회수 : ${dto.sb_count }
+					<c:if test="${sessionScope.sm_id ne null}">
+						<img alt="like" src="./images/like.png" onclick="return like(${dto.sb_no});" style="vertical-align: middle;">
+					</c:if>
+					<span>${dto.sb_like }</span>
 				<hr>
 				${dto.sb_content }
+				<c:if test="${dto.sb_file != null }">
+					<img alt="" src="./upfile/${dto.sb_file }" max-width="900px">
+				</c:if>
 				<hr>
 			<a href="./board">보드로 이동</a>
 			<!-- 여기 수정했습니다. -->

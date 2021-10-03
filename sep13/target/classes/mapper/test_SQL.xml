@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+	<select id="boardList" resultType="HashMap">
+		SELECT sb_no, sb_title, sb_date, sm_id, sm_name, sb_count
+		FROM sbboardview
+		WHERE sb_cate=#{sb_cate}  
+		LIMIT #{pageNo}, 10
+	</select>
+	
+	<select id="detail" parameterType="HashMap" resultType="HashMap">
+		SELECT * FROM sbboardview WHERE sb_no=#{sb_no}
+	</select>
+	
+	<update id="delete" parameterType="HashMap">
+		UPDATE sboard SET sb_del=1 WHERE sb_no=#{sb_no}
+	</update>
+	
+	<delete id="delete1" parameterType="HashMap">
+		DELETE FROM sboard WHERE sb_no=#{sb_no}
+	</delete>
+	
+	<select id="totalCount" parameterType="HashMap" resultType="HashMap">
+		SELECT count(*) as totalCount FROM sbboardview WHERE sb_cate=#{sb_cate}
+	</select>
+	
+</mapper>

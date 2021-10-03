@@ -5,7 +5,7 @@
 <mapper namespace="admin">
 
 	<select id="getCategory" resultType="hashMap">
-		SELECT sc_no, sc_category FROM scategory 
+		SELECT sc_no, sc_category, sc_date, sc_visible FROM scategory 
 		<if test="sc_no != null">
 			WHERE sc_no=#{sc_no}
 		</if>
@@ -29,6 +29,10 @@
 	
 	<update id="userDelete">
 		UPDATE smember SET sm_grade=0 WHERE sm_no=#{sm_no}
+	</update>
+	
+	<update id="categoryVisible">
+		UPDATE scategory SET sc_visible=if(sc_visible = 1, 0, 1) WHERE sc_no=#{sc_no}
 	</update>
 
 </mapper>
